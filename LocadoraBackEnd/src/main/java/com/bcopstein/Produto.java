@@ -33,6 +33,6 @@ public class Produto {
     
     public double totalcustoDiario(){
         CustoLocacao aux = new CustoLocacao(this, custoDiario);
-        return aux.custoTotal();
+        return aux.custoDiarioComDesconto();
     }
 }

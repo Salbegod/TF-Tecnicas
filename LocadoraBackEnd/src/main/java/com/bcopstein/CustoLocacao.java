@@ -10,13 +10,12 @@ public class CustoLocacao {
         this.custoDiario = custoDiario;
     }
 
-    public double custoTotal(){
+    public double custoDiarioComDesconto(){
 
-        //FactoryDesconto carroDesconto = new FactoryDesconto(produto);
-        //chama FactorySeguro
+        FactoryDesconto carroDesconto = new FactoryDesconto(produto);
+        FactorySeguro carroSeguro = new FactorySeguro(produto);
 
-        //soma custoDiario ao custo do seguro e aplica desconto
-        return 0;
+        return (custoDiario - (custoDiario*(carroDesconto.getDesconto().calcular())/100) + carroSeguro.getSeguro().calcular());
 
     }
 }

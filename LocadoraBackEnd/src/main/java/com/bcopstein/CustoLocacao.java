@@ -12,8 +12,7 @@ public class CustoLocacao {
 
     public double custoTotal(){
 
-        //chama FactoryDesconto
-
+        //FactoryDesconto carroDesconto = new FactoryDesconto(produto);
         //chama FactorySeguro
 
         //soma custoDiario ao custo do seguro e aplica desconto

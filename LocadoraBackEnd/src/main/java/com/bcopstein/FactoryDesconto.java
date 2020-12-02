@@ -2,9 +2,6 @@
 
 package com.bcopstein;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 public class FactoryDesconto {
 
     private Produto produto;
@@ -14,5 +11,15 @@ public class FactoryDesconto {
     }
 
     
-    
+    public Desconto getDesconto(){
+
+        if (produto.getDesconto().toUpperCase().equals("BLACKFRIDAY")){
+            return new DescontoBlackFriday();
+        }
+        else if (produto.getDesconto().toUpperCase().equals("NATAL")) {
+            return new DescontoNatal();
+        }
+        return new DescontoPadrao();
+
+    }
 }
